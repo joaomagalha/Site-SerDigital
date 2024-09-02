@@ -1,0 +1,413 @@
+:root {
+    --dark: #272D38;
+    --light: #FFF;
+    --primary-color: #8EADD5;
+    --primary-color-dark: #3f3f3f;
+    --gray: #F6F6F6;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--dark);
+    text-align: center;
+    margin: 0;
+    background-image: radial-gradient(circle at left top, rgb(142 173 213 / .3), transparent 400px),
+    radial-gradient(circle at right center, rgb(142 173 213 / .3), transparent 400px);
+}
+
+.content-wrapper-center {
+    padding: 3rem 1rem 2rem 1rem;
+    max-width: 67.25rem;
+    margin: auto;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;     
+}
+
+.header nav{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.header-menu {
+    list-style-type: none;
+    padding: 0;
+    text-align: right;
+
+    /* Funciona como hamburguer menu */
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 6.25rem;
+    max-height: 0;
+    overflow: hidden;
+    background-color: rgb(255, 255, 255);
+    transition: max-height .5s ease-in-out;
+    padding: 0 1em;
+
+}
+
+.menu-btn:checked ~ .header-menu{
+    max-height: 100vh;
+}
+
+.menu-btn:checked + .menu-icon .nav-icon{
+    background-color: transparent;
+
+}
+
+.header-menu:focus-within{
+    max-height: 100vh;
+}
+
+@media screen and (min-width: 46.25em){
+    .header-menu{
+        position: static;
+        max-height: initial;
+        background-color: initial;
+    }
+}
+
+.header-menu li{
+    padding: .25em 0;
+}
+
+.header-menu a {
+    display: block;
+    padding: 1.75em;
+
+}
+
+a {
+    color: inherit;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+.header {
+    text-align: left;
+}
+
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    padding: 1em;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+    color: var(--light);
+    text-transform: uppercase;
+}
+
+.hero_title{
+    margin-top: 0;
+}
+
+.hero_text{
+    margin: 0 0 1.5rem;
+}
+
+.btn:hover,
+.btn:focus {
+    background-color: var(--primary-color-dark);
+}
+
+img {
+    max-width: 100%;
+}
+
+
+.brands h2 {
+    font-size: 1rem;
+    font-weight: lighter;
+    color: #667085;
+    text-align: center;
+
+}
+
+.brands ul {
+    list-style-type: none;
+    background-color: var(--gray);
+    border-radius: 5px;
+    padding: 1em;
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem;
+}
+
+.hide {
+    position: absolute;
+    clip: rect(1px, 1px, 1px, 1px);
+    padding: 0;
+    border: 0;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+}
+
+.testemunho {
+    background-color: var(--gray);
+    border-radius: 5px;
+    padding: 1rem;
+    container: testemunhoCard / inline-size;
+}
+
+.testemunho_thumb{
+    height: 8.125rem;
+    width: 8.125rem;
+        
+}
+
+.contato {
+    background-color: var(--gray);
+    border-radius: 5px;
+    padding: 1rem;
+    margin-top: 4rem;
+}
+
+.contato_image {
+    display: none;
+}
+
+.footer {
+    background-color: var(--gray);
+}
+
+.footer ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer a {
+    text-decoration: none;
+}
+
+.logo {
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.copyright {
+    white-space: nowrap;
+}
+
+.hero,
+.brands,
+.branding,
+.testemunhos,
+.contato {
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+}
+.row{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: .5rem;
+    grid-auto-flow: dense;
+}
+.testemunhos_title{
+    text-align: center;
+}
+.row.testemunhos_wrapper{
+    row-gap: 3rem;
+}
+.row.contato{
+    padding: 4.25rem 1rem;
+}
+.contato_title{
+    margin-top: 0;
+}
+.row > .sm-12{
+    grid-column: 1 / -1;
+}
+
+.testemunho_card{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    text-align: center;
+}
+
+.icons li{
+    display: inline-block;
+    font-size: 2rem;
+}
+.icons li + li{
+    margin-left: 1rem;
+}
+
+@container testemunhoCard (min-width: 46.187em){
+    .testemunho_card{
+        flex-direction: row;
+        text-align: left;
+    }
+}
+
+/* md */
+@media screen and (min-width: 46.25em ){ 
+    body{
+        text-align: left;
+    }
+    h1{
+        font-size: 3.625;
+    }
+    h2{
+        font-size: 2.875rem;
+    }
+    .header{
+        align-items: center;
+    }
+    .menu-btn, .menu-icon{
+        display: none;
+    }
+    .header-menu{
+        display: block;
+        margin: 0;
+    }
+    .hero_title{
+        margin-bottom: 1rem;
+    }
+    .hero_text{
+        margin: 0 0 2.4375rem;
+    }
+    .header-menu li{
+        display: inline-block;
+        margin-left: 1.7rem;
+    }
+    .header-menu a{
+        padding: 1rem;
+    }
+    .imagem{
+        text-align: center;
+    }
+    .contato_image {
+        display: block;
+        text-align: center;
+    }
+    .row.contato{
+        padding: 3.425rem 3.875rem;
+    }
+    .row{
+        gap: 1rem;
+    }
+    .row > .md-3{
+        grid-column: span 3;
+    }
+    .row > .md-4{
+        grid-column: span 4;
+    }
+    .row > .md-6{
+        grid-column: span 6;
+    }
+    .row > .md-9{
+        grid-column: span 9;
+    }
+    .row > .md-1-6{
+        grid-column: 1 / 7;
+    }
+    .row > .md-7-12{
+        grid-column: 7 / -1;
+    }
+    .footer-company{
+        margin: 0;
+    }
+    .footer-contact{
+        margin: 0;
+    }
+    
+
+}
+
+/* lg */
+@media screen and (min-width: 90em){
+    .row{
+        gap: 3rem;
+    }
+    .row > .lg-3{
+        grid-column: span 3;
+    }
+    .row > .lg-4{
+        grid-column: span 4;
+    }
+    .row > .lg-5{
+        grid-column: span 5;
+    }
+    .row > .lg-6{
+        grid-column: span 6;
+    }
+    .row > .lg-7{
+        grid-column: span 7;
+    }
+    .row > .lg-8-12{
+        grid-column: 8 / -1;
+    }
+    .row > .lg-1-5{
+        grid-column: 1 / 6;
+    }
+    .row > .lg-1-7{
+        grid-column: 1 / 7;
+    }
+    .row > .lg-8-13{
+        grid-column: 8 / 13;
+    }
+    .hero_title{
+        margin-top: 7rem;
+    }
+
+}
+
+/* Hamburguer Menu */
+.menu-icon{
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+    height: 24px;
+}
+.nav-icon{
+    background-color: #3f3f3f;
+    display: inline-block;
+    height: 2px;
+    width: 24px;
+    position: relative;
+}
+.nav-icon::after, .nav-icon::before{
+    content: "";
+    background-color: #3f3f3f;
+    display: inline-block;
+    height: 2px;
+    width: 24px;
+    position: absolute;
+}
+.nav-icon::after{
+    transform: translateY(8px);
+    transition: transform .5s ease-in-out;
+}
+.nav-icon::before{
+    transform: translateY(-8px);
+    transition: transform .5s ease-in-out;
+}
+.menu-btn:checked + .menu-icon .nav-icon:before{
+    transform: rotate(-45deg);
+}
+.menu-btn:checked + .menu-icon .nav-icon:after{
+    transform: rotate(45deg);
+}
+.menu-btn:focus-visible + .menu-icon{
+    outline: 2px solid black;
+    outline-offset: 3px;
+}
